@@ -2,396 +2,376 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tako 2 Go</title>
-  <style>
-    body{
-        background-color: white;
-        margin: 0;
-        padding: 10px;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-       
-    @media print {
-        body *:not(.printable-menu, .printable-menu *) {
-        visibility: hidden;
-        margin: 0 !important;
-        padding: 0 !important;
-        }
-    }
-    
-    .logo-container{
-      display: flex;
-      flex-direction: column; 
-      align-items: center;   
-      margin-bottom: 20px;
-    }
-    
-    .logo{
-     max-width: 280px;
-     width: 100%;
-     height: auto;
-    }
-    
-    .Item-heading{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #f16b29;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 1.6rem;
-      text-align: center;
-    }
-    
-    .item{
-       margin: 20px 0;
-       font-size: 1.1rem;
-       display: block;
-       width: 100%;
-    }
-    
-    .item-description{
-        font-size: 0.9rem;
-        margin: 5px 0 15px 0;
-        color: #555;
-        line-height: 1.4;
-    }
-    
-    .price{
-       float: right;
-       font-weight: bolder;
-       font-size: 1rem;
-       color: #f16b29;
-    }
-    
-    .menu{
-      max-width: 100%;
-      margin: 0 auto;
-      text-align: left;
-    }
-    
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9rem;
-        margin: 15px 0;
-    }
-    
-    th, td {
-        padding: 10px 8px;
-        text-align: center;
-        vertical-align: top;
-    }
-    
-    th {
-        font-weight: bold;
-        background-color: #f9f9f9;
-    }
-    
-    td:first-child {
-        text-align: left;
-        font-weight: bold;
-    }
-    
-    .desc {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: normal;
-        color: #666;
-        margin-top: 5px;
-        line-height: 1.3;
-    }
-    
-    @media (max-width: 480px) {
-        .Item-heading {
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tako 2 Go</title>
+   <style>
+      * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+      }
+      
+      body {
+         background-color: white;
+         font-family: Arial, sans-serif;
+         line-height: 1.5;
+         padding: 15px;
+         max-width: 100%;
+         overflow-x: hidden;
+      }
+      
+      .logo-container {
+         text-align: center;
+         margin-bottom: 20px;
+      }
+      
+      .logo {
+         max-width: 280px;
+         width: 100%;
+         height: auto;
+      }
+      
+      .menu-section {
+         margin-bottom: 30px;
+      }
+      
+      .Item-heading {
+         text-align: center;
+         margin: 25px 0 15px;
+         color: #f16b29;
+         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         font-size: 1.6rem;
+      }
+      
+      .menu-item {
+         margin: 18px 0;
+         display: block;
+         width: 100%;
+      }
+      
+      .item-name {
+         font-weight: bold;
+         font-size: 1.1rem;
+         display: block;
+      }
+      
+      .price {
+         float: right;
+         font-weight: bold;
+         color: #f16b29;
+      }
+      
+      .item-description {
+         font-size: 0.9rem;
+         color: #555;
+         margin-top: 4px;
+         display: block;
+      }
+      
+      .responsive-table {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 15px 0;
+      }
+      
+      .responsive-table th {
+         background-color: #f9f9f9;
+         padding: 10px 5px;
+         text-align: center;
+         font-size: 0.9rem;
+      }
+      
+      .responsive-table td {
+         padding: 12px 5px;
+         vertical-align: top;
+      }
+      
+      .responsive-table tr td:first-child {
+         text-align: left;
+         font-weight: bold;
+      }
+      
+      .responsive-table .desc {
+         display: block;
+         font-size: 0.8rem;
+         font-weight: normal;
+         color: #666;
+         margin-top: 5px;
+         line-height: 1.3;
+      }
+      
+      @media (max-width: 480px) {
+         .Item-heading {
             font-size: 1.4rem;
-            margin-top: 25px;
-        }
-        
-        .item {
+         }
+         
+         .item-name {
             font-size: 1rem;
-        }
-        
-        .price {
+         }
+         
+         .price {
             font-size: 0.95rem;
-        }
-        
-        th, td {
-            padding: 8px 5px;
+         }
+         
+         .responsive-table th, 
+         .responsive-table td {
+            padding: 8px 4px;
             font-size: 0.85rem;
-        }
-        
-        .desc {
+         }
+         
+         .responsive-table .desc {
             font-size: 0.75rem;
-        }
-        
-        .logo {
-            max-width: 220px;
-        }
-    }
-    
-    @media (max-width: 360px) {
-        th, td {
-            padding: 6px 4px;
-            font-size: 0.8rem;
-        }
-        
-        .desc {
-            font-size: 0.7rem;
-        }
-        
-        .Item-heading {
+         }
+      }
+      
+      @media (max-width: 360px) {
+         .Item-heading {
             font-size: 1.3rem;
-        }
-    }
-    
-    .menu-section {
-        margin-bottom: 30px;
-    }
-  </style>
+         }
+         
+         .responsive-table th, 
+         .responsive-table td {
+            padding: 6px 3px;
+            font-size: 0.8rem;
+         }
+         
+         .responsive-table .desc {
+            font-size: 0.7rem;
+         }
+      }
+   </style>
 </head>
 
 <body>
-  <div class="logo-container">
-    <img src="https://assets.codepen.io/1231456/tako2go_logo.png" class="logo" alt="Tako 2 Go Logo">
-  </div>
-  
-  <div class="menu">
-    <div class="menu-section"> <!--Taco-->
-       <div class="Item-heading">
-          <h1>Taco</h1>
-       </div>
-       <div>
-          <strong class="item">Chicken Taco <span class="price">4$</span></strong>
-          <p class="item-description">Minced chicken breast, Cheese, Coleslaw, Mango, Taco spices.</p>
-       </div>
-       <div>
-          <strong class="item">Beef Taco<span class="price">4$</span></strong>
-          <p class="item-description">Minced Beef, Cheese, Guacamole, Taco Spices.</p>
-       </div>
-       <div>
-          <strong class="item">Taco Plate<span class="price">10$</span></strong>
-          <p class="item-description">3 Portions of your choice.</p>
-       </div>
-    </div>
+   <div class="logo-container">
+      <img src="https://assets.codepen.io/1231456/tako2go_logo.png" class="logo" alt="Tako 2 Go Logo">
+   </div>
+   
+   <div class="menu">
+      <div class="menu-section"> <!--Taco-->
+         <div class="Item-heading">
+            <h1>Taco</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Chicken Taco <span class="price">4$</span></span>
+            <span class="item-description">Minced chicken breast, Cheese, Coleslaw, Mango, Taco spices.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Beef Taco <span class="price">4$</span></span>
+            <span class="item-description">Minced Beef, Cheese, Guacamole, Taco Spices.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Taco Plate <span class="price">10$</span></span>
+            <span class="item-description">3 Portions of your choice.</span>
+         </div>
+      </div>
 
-    <div class="menu-section"><!--Wraps-->
-       <div class="Item-heading">
-          <h1>Wraps</h1>
-       </div>
-       <div>
-          <table>
+      <div class="menu-section"><!--Wraps-->
+         <div class="Item-heading">
+            <h1>Wraps</h1>
+         </div>
+         <table class="responsive-table">
             <tr>
-                <th></th>
-                <th>Small</th>
-                <th>Medium</th>
-                <th>Large</th>
+               <th></th>
+               <th>Small</th>
+               <th>Medium</th>
+               <th>Large</th>
             </tr>
             <tr>
-                <td>
-                    Fajita 
-                    <span class="desc">Chicken, Cheese, Mushrooms, Iceberg, Chips, Onions, Peppers, Avocado Sauce.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Fajita 
+                  <span class="desc">Chicken, Cheese, Mushrooms, Iceberg, Chips, Onions, Peppers, Avocado Sauce.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
             <tr>
-                <td>
-                    Msakhan 
-                    <span class="desc">Chicken, Cheese, Mayonnaise, Chips, Pickles, Iceberg, Onions, Toumiyi.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Msakhan 
+                  <span class="desc">Chicken, Cheese, Mayonnaise, Chips, Pickles, Iceberg, Onions, Toumiyi.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
             <tr>
-                <td>
-                    Big Mac 
-                    <span class="desc">Minced Beef, onions, Cheese, Chips, Iceberg, Pickles, Big Mac Sauce.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Big Mac 
+                  <span class="desc">Minced Beef, onions, Cheese, Chips, Iceberg, Pickles, Big Mac Sauce.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
             <tr>
-                <td>
-                    Cheese Steak 
-                    <span class="desc">Shredded Steak, Cheese, Mushrooms, Peppers, Onions, Chips, Mayonnaise.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Cheese Steak 
+                  <span class="desc">Shredded Steak, Cheese, Mushrooms, Peppers, Onions, Chips, Mayonnaise.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
             <tr>
-                <td>
-                    Crispy 
-                    <span class="desc">Fried Crispy Chicken, Chips, Cheese, Coleslaw, Cheddar Sauce, Big Mac Sauce.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Crispy 
+                  <span class="desc">Fried Crispy Chicken, Chips, Cheese, Coleslaw, Cheddar Sauce, Big Mac Sauce.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
             <tr>
-                <td>
-                    Samkeh Harra Traboulsiyi 
-                    <span class="desc">Fish, Tomato, Iceberg, Olive oil, thini, Nuts,Lemon Juice, Pine, Chips, Samke Harra Spices.</span>
-                </td>
-                <td>$5</td>
-                <td>$8</td>
-                <td>$12</td>
+               <td>
+                  Samkeh Harra Traboulsiyi 
+                  <span class="desc">Fish, Tomato, Iceberg, Olive oil, thini, Nuts,Lemon Juice, Pine, Chips, Samke Harra Spices.</span>
+               </td>
+               <td>$5</td>
+               <td>$8</td>
+               <td>$12</td>
             </tr>
-          </table>
-        </div>
-    </div><!--wraps-->
-
-    <div class="menu-section"><!--Tawook-->
-      <strong class="item">Tawook<span class="price">5$</span></strong>
-      <p class="item-description">Tawook, Coleslaw, Fries, Toumiyi sauce, Pickles, Lebanese Bread.</p>
-    </div><!--Tawook-->
-
-    <div class="menu-section"><!--Sandwiches-->
-       <div class="Item-heading">
-          <h1>Sandwiches</h1>
-       </div>
-       <div>
-          <strong class="item">Fajitas<span class="price">8$</span></strong>
-          <p class="item-description">Chicken, Cheese, Mushrooms, Peppers, Onions, Chips, Iceberg, Avocado Sauce.</p>
-       </div>
-       <div>
-          <strong class="item">Crispy <span class="price">8$</span></strong>
-          <p class="item-description">Fried Chicken, Chips, Cheese, Coleslaw, Cheddar Sauce, Big Mac Sauce.</p>
-       </div>
-       <div>
-          <strong class="item">Cheese Steak<span class="price">8$</span></strong>
-          <p class="item-description">Shredded Steak, Cheese, Mushrooms, Peppers, Onions, Chips, Mayonnaise.</p>
-       </div>
-    </div><!--Sandwiches-->
-
-    <div class="menu-section"><!--Burgers-->
-     <div class="Item-heading">
-      <h1>Burgers</h1>
-     </div>
-     <div>
-      <strong class="item">Crispy Burger <span class="price">6$</span></strong>
-      <p class="item-description">Crispy, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</p>
-     </div>
-     <div>
-      <strong class="item">Big Mac Burger<span class="price">6$</span></strong>
-      <p class="item-description">Minced Beef Patty, Onions, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</p>
-     </div>
-    </div><!--Burgers-->
-
-    <div class="menu-section"><!--Pasta-->
-      <div class="Item-heading">
-          <h1>Pasta</h1>
-      </div>
-      <div>
-          <strong class="item">Pinky Pasta <span class="price">8$</span></strong>
-          <p class="item-description">Fusili, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</p>
-      </div>
-      <div>
-          <strong class="item">Pinky Pasta With Crispy <span class="price">12$</span></strong>
-          <p class="item-description">Fusili, Crispy, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</p>
-      </div>
-      <div>
-          <strong class="item">Pinly Pasta with Meat<span class="price">12$</span></strong>
-          <p class="item-description">Fusili, Meat, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</p>
-      </div>
-      <div>
-          <strong class="item">Fettucine Alfredo <span class="price">12$</span></strong>
-          <p class="item-description">Fettucine, Mushrooms, Ham, Four Cheese, Mozzarella, Cream, Crispy, Pepper.</p>
-      </div>
-      <div>
-          <strong class="item">Lasagne <span class="price">12$</span></strong>
-          <p class="item-description">Lasagne Pasta, Minced Beef Bolognaise, Bechamel Sauce, Four Cheese, Mozzarella.</p>
-      </div>
-    </div><!--Pasta-->
-
-    <div class="menu-section"><!--Potato-->
-      <div class="Item-heading">
-          <h1>Potato</h1>
-      </div>
-      <div>
-         <table>
-               <tr>
-          <th></th>
-          <th>Small</th>
-          <th>Large</th>
-      </tr>
-      <tr>
-          <td>
-              French Fries
-          </td>
-          <td>4$</td>
-          <td>8$</td>
-      </tr>
-      <tr>
-          <td>
-              Nachos 
-              <span class="desc">Chips, Four Cheese, Mozzarella, Cheddar, Jalapenos</span>
-          </td>
-          <td>4$</td>
-          <td>8$</td>
-      </tr>
          </table>
-      </div>
-      <div>
-          <strong class="item"> Twister Potato Stick <span class="price">8$</span></strong>
-      </div>
-    </div><!--Potato-->
+      </div><!--wraps-->
 
-    <div class="menu-section"><!--HotDog-->
-      <div class="Item-heading">
-          <h1>HotDog</h1>
-      </div>
-      <div>
-          <strong class="item">Frankfurt <span class="price">8$</span></strong>
-          <p class="item-description">HotDog, Jalapenos, Chips, Mustard, Cheddar, Ketchup, Mayonnaise.</p>
-      </div>
-      <div>
-          <strong class="item">HotDog Stick <span class="price">7$</span></strong>
-          <p class="item-description">Fried HotDog in dough, Mozzarella, Chips.</p>
-      </div>
-    </div><!--HotDog-->
+      <div class="menu-section"><!--Tawook-->
+         <span class="item-name">Tawook<span class="price">5$</span></span>
+         <span class="item-description">Tawook, Coleslaw, Fries, Toumiyi sauce, Pickles, Lebanese Bread.</span>
+      </div><!--Tawook-->
 
-    <div class="menu-section"><!--Plates-->
-      <div class="Item-heading">
-          <h1>Plates</h1>
-      </div>
-      <div>
-          <strong class="item">Crispy Plate <span class="price">10$</span></strong>
-          <p class="item-description">Crispy, Fries.</p>
-      </div>
-      <div>
-         <table>
-               <tr>
-          <th></th>
-          <th>Small</th>
-          <th>Large</th>
-      </tr>
-      <tr>
-          <td>
-              Crispy Plate (loaded cheese & Mushroom Sauce)
-              <span class="desc">Diced Crispy Pieces, Fries, Cheese, Mushrooms, Cream.</span>
-          </td>
-          <td>8$</td>
-          <td>14$</td>
-      </tr>
-      <tr>
-          <td>
-             Crispy Plate (loaded cheese & Sauce) 
-              <span class="desc">Diced Crispy Pieces, Fries, Cheese, Cheddar Sauce, barbecue Sauce.</span>
-          </td>
-          <td>8$</td>
-          <td>14$</td>
-      </tr>
+      <div class="menu-section"><!--Sandwiches-->
+         <div class="Item-heading">
+            <h1>Sandwiches</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Fajitas<span class="price">8$</span></span>
+            <span class="item-description">Chicken, Cheese, Mushrooms, Peppers, Onions, Chips, Iceberg, Avocado Sauce.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Crispy <span class="price">8$</span></span>
+            <span class="item-description">Fried Chicken, Chips, Cheese, Coleslaw, Cheddar Sauce, Big Mac Sauce.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Cheese Steak<span class="price">8$</span></span>
+            <span class="item-description">Shredded Steak, Cheese, Mushrooms, Peppers, Onions, Chips, Mayonnaise.</span>
+         </div>
+      </div><!--Sandwiches-->
+
+      <div class="menu-section"><!--Burgers-->
+         <div class="Item-heading">
+            <h1>Burgers</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Crispy Burger <span class="price">6$</span></span>
+            <span class="item-description">Crispy, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Big Mac Burger<span class="price">6$</span></span>
+            <span class="item-description">Minced Beef Patty, Onions, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</span>
+         </div>
+      </div><!--Burgers-->
+
+      <div class="menu-section"><!--Pasta-->
+         <div class="Item-heading">
+            <h1>Pasta</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Pinky Pasta <span class="price">8$</span></span>
+            <span class="item-description">Fusili, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Pinky Pasta With Crispy <span class="price">12$</span></span>
+            <span class="item-description">Fusili, Crispy, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Pinly Pasta with Meat<span class="price">12$</span></span>
+            <span class="item-description">Fusili, Meat, Four Cheese, Mozzarella, Parmesan, Red Sauce, Cream.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Fettucine Alfredo <span class="price">12$</span></span>
+            <span class="item-description">Fettucine, Mushrooms, Ham, Four Cheese, Mozzarella, Cream, Crispy, Pepper.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Lasagne <span class="price">12$</span></span>
+            <span class="item-description">Lasagne Pasta, Minced Beef Bolognaise, Bechamel Sauce, Four Cheese, Mozzarella.</span>
+         </div>
+      </div><!--Pasta-->
+
+      <div class="menu-section"><!--Potato-->
+         <div class="Item-heading">
+            <h1>Potato</h1>
+         </div>
+         <table class="responsive-table">
+            <tr>
+               <th></th>
+               <th>Small</th>
+               <th>Large</th>
+            </tr>
+            <tr>
+               <td>French Fries</td>
+               <td>4$</td>
+               <td>8$</td>
+            </tr>
+            <tr>
+               <td>
+                  Nachos 
+                  <span class="desc">Chips, Four Cheese, Mozzarella, Cheddar, Jalapenos</span>
+               </td>
+               <td>4$</td>
+               <td>8$</td>
+            </tr>
          </table>
-      </div>
-    </div><!--Plates-->
-  </div><!--div menu-->
+         <div class="menu-item">
+            <span class="item-name">Twister Potato Stick <span class="price">8$</span></span>
+         </div>
+      </div><!--Potato-->
+
+      <div class="menu-section"><!--HotDog-->
+         <div class="Item-heading">
+            <h1>HotDog</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Frankfurt <span class="price">8$</span></span>
+            <span class="item-description">HotDog, Jalapenos, Chips, Mustard, Cheddar, Ketchup, Mayonnaise.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">HotDog Stick <span class="price">7$</span></span>
+            <span class="item-description">Fried HotDog in dough, Mozzarella, Chips.</span>
+         </div>
+      </div><!--HotDog-->
+
+      <div class="menu-section"><!--Plates-->
+         <div class="Item-heading">
+            <h1>Plates</h1>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Crispy Plate <span class="price">10$</span></span>
+            <span class="item-description">Crispy, Fries.</span>
+         </div>
+         <table class="responsive-table">
+            <tr>
+               <th></th>
+               <th>Small</th>
+               <th>Large</th>
+            </tr>
+            <tr>
+               <td>
+                  Crispy Plate (loaded cheese & Mushroom Sauce)
+                  <span class="desc">Diced Crispy Pieces, Fries, Cheese, Mushrooms, Cream.</span>
+               </td>
+               <td>8$</td>
+               <td>14$</td>
+            </tr>
+            <tr>
+               <td>
+                  Crispy Plate (loaded cheese & Sauce) 
+                  <span class="desc">Diced Crispy Pieces, Fries, Cheese, Cheddar Sauce, barbecue Sauce.</span>
+               </td>
+               <td>8$</td>
+               <td>14$</td>
+            </tr>
+         </table>
+      </div><!--Plates-->
+   </div><!--div menu-->
 </body>
 </html>
