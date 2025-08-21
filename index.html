@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +85,7 @@
       .responsive-table td {
          padding: 12px 5px;
          vertical-align: top;
+         font-size: 2.5rem;
       }
       
       .responsive-table tr td:first-child {
@@ -139,18 +141,32 @@
             font-size: 0.7rem;
          }
       }
+
+      .combo-offer {
+         background-color: white;
+         color: #f16b29;
+         padding: 10px;
+         text-align: center;
+         font-size: 1.2rem;
+         margin-top: 20px;
+         border-radius: 5px;
+         font-weight: bolder;
+      }
    </style>
 </head>
 
 <body>
    <div class="logo-container">
       <img src="Tako2Go_Logo.jpg" class="logo" alt="Tako 2 Go Logo">
+   <div class="combo-offer">
+      <h1>Make any item a combo 4$</h1>
+  </div>
    </div>
    
    <div class="menu">
       <div class="menu-section"> <!--Taco-->
          <div class="Item-heading">
-            <h1>Taco</h1>
+            <h1>Taco <img src="taco.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
             <span class="item-name">Chicken Taco <span class="price">4$</span></span>
@@ -168,7 +184,7 @@
 
       <div class="menu-section"><!--Wraps-->
          <div class="Item-heading">
-            <h1>Wraps</h1>
+            <h1>Wraps <img src="wrap.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <table class="responsive-table">
             <tr>
@@ -241,7 +257,7 @@
 
       <div class="menu-section"><!--Sandwiches-->
          <div class="Item-heading">
-            <h1>Sandwiches</h1>
+            <h1>Sandwiches <img src="sandwich.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
             <span class="item-name">Fajitas<span class="price">8$</span></span>
@@ -259,21 +275,21 @@
 
       <div class="menu-section"><!--Burgers-->
          <div class="Item-heading">
-            <h1>Burgers</h1>
+            <h1>Burgers <img src="burger.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
-            <span class="item-name">Crispy Burger <span class="price">6$</span></span>
+            <span class="item-name">Crispy Burger <span class="price">7$</span></span>
             <span class="item-description">Crispy, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</span>
          </div>
          <div class="menu-item">
-            <span class="item-name">Big Mac Burger<span class="price">6$</span></span>
+            <span class="item-name">Big Mac Burger<span class="price">7$</span></span>
             <span class="item-description">Minced Beef Patty, Onions, Cheddar, Coleslaw, Pickles, Fries, Big Mac Sauce.</span>
          </div>
       </div><!--Burgers-->
 
       <div class="menu-section"><!--Pasta-->
          <div class="Item-heading">
-            <h1>Pasta</h1>
+            <h1>Pasta <img src="pasta.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
             <span class="item-name">Pinky Pasta <span class="price">8$</span></span>
@@ -299,7 +315,7 @@
 
       <div class="menu-section"><!--Potato-->
          <div class="Item-heading">
-            <h1>Potato</h1>
+            <h1>Potato <img src="nachos.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <table class="responsive-table">
             <tr>
@@ -322,13 +338,13 @@
             </tr>
          </table>
          <div class="menu-item">
-            <span class="item-name">Twister Potato Stick <span class="price">8$</span></span>
+            <span class="item-name">Twister Potato Stick <span class="price">3$</span></span>
          </div>
       </div><!--Potato-->
 
       <div class="menu-section"><!--HotDog-->
          <div class="Item-heading">
-            <h1>HotDog</h1>
+            <h1>HotDog <img src="hotdog.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
             <span class="item-name">Frankfurt <span class="price">8$</span></span>
@@ -342,11 +358,15 @@
 
       <div class="menu-section"><!--Plates-->
          <div class="Item-heading">
-            <h1>Plates</h1>
+            <h1>Plates <img src="loadedfries.png" style="width: 100px; height: 100px;"></h1>
          </div>
          <div class="menu-item">
             <span class="item-name">Crispy Plate <span class="price">10$</span></span>
             <span class="item-description">Crispy, Fries.</span>
+         </div>
+         <div class="menu-item">
+            <span class="item-name">Nuggets <span class="price">6$</span></span>
+            <span class="item-description">4 Pieces with french fries with a sauce of your choice.</span>
          </div>
          <table class="responsive-table">
             <tr>
@@ -375,4 +395,3 @@
    </div><!--div menu-->
 </body>
 </html>
-
